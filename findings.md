@@ -344,3 +344,54 @@
 ## 最终结论
 
 **PRD.md 中定义的所有 P0 页面已 100% 实现，54 项验收标准 100% 完成，所有页面与 Figma 设计图精确对齐。**
+
+---
+
+## Figma 远程图片集成 (2026-04-02)
+
+### 已完成页面 (7 个主要页面)
+
+| 页面 | 图片数量 | 集成状态 | 备注 |
+|------|---------|---------|------|
+| ShopPage | 50+ | ✅ | 装饰气泡、横幅、分类、产品、导航 |
+| ProductDetailPage | 7 | ✅ | 主图、变体缩略图、分享图标 |
+| CartPage | 动态 | ✅ | 购物车/心愿单商品图片映射 |
+| PaymentPage | 动态 | ✅ | 订单商品圆形图片 |
+| HelloCardPage | 5 | ✅ | 主图、装饰气泡、分页圆点 |
+| ReadyCardPage | 5 | ✅ | 主图、装饰气泡 |
+| EmptyCartFromWishlistView | 动态 | ✅ | 心愿单商品图片 |
+| EmptyCartFromPopularView | 动态 | ✅ | 热门产品卡片 |
+
+### 技术实现
+
+**AsyncImage 模式**: 所有远程图片使用 SwiftUI AsyncImage 组件，带占位图回退
+
+**颜色映射函数**: `getProductImageURL(for:)` 支持 10+ 种颜色映射
+
+**占位图策略**:
+- 加载中：显示色块占位（与产品颜色一致）
+- 加载失败：回退到系统图标或色块
+
+### 注意事项
+
+**Figma CDN URL 有效期**: 7 天
+- 部署前需重新验证 URL 有效性
+- 建议建立定期刷新机制
+
+**网络依赖**:
+- AsyncImage 需要网络连接
+- 建议后续添加本地缓存机制 (SDWebImage/Kingfisher)
+
+### 未更新的页面
+
+**使用系统图标 (无需更新)**:
+- StartPage: shopping.bag.fill
+- CreateAccount: camera.fill, eye.fill
+- AddVoucherSheet: gift, list.dash
+- 所有导航/功能图标：SF Symbols
+
+**P1 优先级页面 (可选后续)**:
+- Profile 页面
+- Wishlist 页面
+- Categories 页面
+- Search 页面

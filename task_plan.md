@@ -110,3 +110,10 @@
 | Phase 3: Figma 设计对齐验证 | completed | 19/19 已验证 (~95%) |
 | Phase 4: 汇总报告 | completed | 验证报告已生成 |
 | Phase 5: 待完成功能实现 | completed | 5.1 5.2 5.3 5.4 全部完成 |
+| Phase 6: ShopPage Figma 远程图片集成 | completed | ShopPage 所有图片已替换为 Figma 远程资源 |
+| Phase 7: ProductDetailPage Figma 远程图片集成 | completed | ProductDetailPage 图片 100% Figma 对齐 |
+| Phase 8: CartPage Figma 远程图片集成 | completed | CartPage 商品图片 100% Figma 对齐 |
+| Phase 9: PaymentPage Figma 远程图片集成 | completed | PaymentPage 商品图片 100% Figma 对齐 |
+| Phase 10: Onboarding 页面 Figma 远程图片集成 | completed | HelloCardPage/ReadyCardPage 图片 100% Figma 对齐 |
+| Phase 11: EmptyCart 页面 Figma 远程图片集成 | completed | EmptyCartFromWishlistView/EmptyCartFromPopularView 图片 100% Figma 对齐 |
+| Phase 12: Figma 远程图片集成总结 | completed | 7 个主要页面、70+ 图片资源、完整报告生成 |

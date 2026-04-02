@@ -238,15 +238,28 @@ struct PopularProductCard: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            // Product Image
-            ZStack(alignment: .topTrailing) {
-                RoundedRectangle(cornerRadius: 5)
-                    .fill(Color(hex: product.imageColor))
-                    .frame(width: 104, height: 140)
+            // Product Image from Figma
+            ZStack(alignment: .topLeading) {
+                AsyncImage(url: URL(string: getProductImageURL(for: product.imageColor))) { image in
+                    image.resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 104, height: 140)
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                } placeholder: {
+                    RoundedRectangle(cornerRadius: 5)
+                        .fill(Color(hex: product.imageColor))
+                        .frame(width: 104, height: 140)
+                }
 
-                Image(systemName: product.icon)
-                    .font(.system(size: 50, weight: .regular))
-                    .foregroundColor(.white.opacity(0.6))
+                // Badge
+                Text(product.badge)
+                    .font(.system(size: 11, weight: .bold))
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(product.badge == "Sale" ? Color(hex: "#FF6B6B") : Color(hex: "#004CFF"))
+                    .cornerRadius(4)
+                    .padding(4)
             }
 
             // Sales Count
@@ -273,5 +286,29 @@ struct PopularProductCard: View {
 struct EmptyCartFromPopularView_Previews: PreviewProvider {
     static var previews: some View {
         EmptyCartFromPopularView()
+    }
+}
+
+// MARK: - Product Image URL Helper
+func getProductImageURL(for color: String) -> String {
+    switch color {
+    case "#FFB6C1": // Pink
+        return "https://www.figma.com/api/mcp/asset/ed3e9463-9a3b-43ba-90b9-da37bf20ccaa"
+    case "#B6D4FF": // Blue
+        return "https://www.figma.com/api/mcp/asset/e3719d83-504e-4f54-a3b0-1b4760a4d9cb"
+    case "#FFF4B6": // Yellow
+        return "https://www.figma.com/api/mcp/asset/95dc9ed1-944f-49ec-b9f6-43b9e090d3da"
+    case "#FFD1DC": // Light Pink
+        return "https://www.figma.com/api/mcp/asset/d80951b1-d8df-4011-b71e-8824a19e43f1"
+    case "#E8F5E9": // Green
+        return "https://www.figma.com/api/mcp/asset/c8d6c11f-0ac9-411e-9169-335a6e032f55"
+    case "#FFD4C5": // Peach
+        return "https://www.figma.com/api/mcp/asset/c8d6c11f-0ac9-411e-9169-335a6e032f55"
+    case "#FF6B6B": // Coral
+        return "https://www.figma.com/api/mcp/asset/ed3e9463-9a3b-43ba-90b9-da37bf20ccaa"
+    case "#FFD700": // Gold
+        return "https://www.figma.com/api/mcp/asset/95dc9ed1-944f-49ec-b9f6-43b9e090d3da"
+    default:
+        return "https://www.figma.com/api/mcp/asset/d80951b1-d8df-4011-b71e-8824a19e43f1"
     }
 }
