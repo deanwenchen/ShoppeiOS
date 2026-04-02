@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev)",
+      "Bash(npx vite --host)",
+      "Bash(powershell Get-Content:*)",
+      "Bash(npx vite)",
+      "Bash(tasklist:*)",
+      "Bash(findstr:*)",
+      "Bash(npx vite --port 3000)",
+      "Bash(move:*)",
+      "Bash(npm start)",
+      "mcp__figma__get_design_context",
+      "Bash(dir:*)",
+      "mcp__figma__get_metadata"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "figma"
+  ]
+}
