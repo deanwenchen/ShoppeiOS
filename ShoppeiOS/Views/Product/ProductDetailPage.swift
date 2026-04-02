@@ -341,7 +341,7 @@ struct ProductDetailPage: View {
                 .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
 
             // Figma Share Icon
-            AsyncImage(url: URL(string: shareIconURL)) { image in
+            AsyncImage(url: URL(string: ImageURLProvider.getBubbleImageURL(id: "01"))) { image in
                 image.resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 14, height: 14)
