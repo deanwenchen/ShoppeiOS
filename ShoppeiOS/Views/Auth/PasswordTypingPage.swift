@@ -67,10 +67,9 @@ struct PasswordTypingPage: View {
                 }
                 .padding(.horizontal, 40)
                 .overlay(
-                    // Hidden text field for actual input
-                    TextField("", text: $password)
+                    // Hidden SecureField for password input
+                    SecureField("", text: $password)
                         .foregroundColor(.clear)
-                        .keyboardType(.asciiCapable)
                         .focused($isPasswordFocused)
                         .onChange(of: password) { newValue in
                             if newValue.count > 8 {
@@ -135,10 +134,8 @@ struct PasswordTypingPage: View {
         if password == testAccountPassword {
             // Password correct - navigate to onboarding
             showErrorState = false
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                withAnimation {
-                    navigateToOnboarding = true
-                }
+            withAnimation {
+                navigateToOnboarding = true
             }
         } else {
             // Password incorrect - show error
