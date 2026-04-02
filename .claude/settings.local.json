@@ -12,7 +12,10 @@
       "Bash(npm start)",
       "mcp__figma__get_design_context",
       "Bash(dir:*)",
-      "mcp__figma__get_metadata"
+      "mcp__figma__get_metadata",
+      "Bash(git commit:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

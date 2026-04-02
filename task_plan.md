@@ -1,122 +1,112 @@
-# Shoppe iOS 任务计划
+# 任务计划：PRD 验证与 Figma 对齐
 
-**版本**: 1.0
-**创建日期**: 2026-04-02
-**最后更新**: 2026-04-02
+**目标**: 验证 PRD.md 中所有需求的页面是否已实现，并检查与 Figma 设计图的对齐情况
 
 ---
 
-## 任务列表
+## Goal Statement
 
-### 阶段 1: 认证流程 (P0)
-
-| ID | 页面名称 | Figma Node | 状态 | 备注 |
-|----|----------|------------|------|------|
-| 1.1 | 启动页 (Start) | 0:12855 | ⏳ Pending | PRD 3.1 |
-| 1.2 | 注册页 (Create Account) | 0:12779 | ⏳ Pending | PRD 3.2 |
-| 1.3 | 登录页 (Login - Email) | 0:12718 | ⏳ Pending | PRD 3.3 |
-| 1.4 | 密码输入页 (Password) | 0:12649 | ⏳ Pending | PRD 3.4 |
-| 1.5 | 密码状态页 (Password Typing/Wrong) | 0:12584/0:12518 | ⏳ Pending | PRD 3.4 |
-| 1.6 | 密码找回 - 选择方式 | 0:12449 | ⏳ Pending | PRD 3.5 |
-| 1.7 | 密码找回 - 验证码 | 0:12382 | ⏳ Pending | PRD 3.5 |
-| 1.8 | 密码找回 - 新密码 | 0:12315 | ⏳ Pending | PRD 3.5 |
-
-### 阶段 2: 引导流程 (P0)
-
-| ID | 页面名称 | Figma Node | 状态 | 备注 |
-|----|----------|------------|------|------|
-| 2.1 | 引导页 - Hello Card | 0:12177 | ⏳ Pending | PRD 3.6 |
-| 2.2 | 引导页 - Ready Card | 0:12113 | ⏳ Pending | PRD 3.6 |
-
-### 阶段 3: 商城首页 (P0)
-
-| ID | 页面名称 | Figma Node | 状态 | 备注 |
-|----|----------|------------|------|------|
-| 3.1 | 商城首页 (Shop) | 0:11012 | ⏳ Pending | PRD 3.7 |
-| 3.2 | Flash Sale + Live | 0:10857 | ⏳ Pending | PRD 3.7 |
-
-### 阶段 4: 商品详情 (P0)
-
-| ID | 页面名称 | Figma Node | 状态 | 备注 |
-|----|----------|------------|------|------|
-| 4.1 | 商品详情页 (Product) | 0:8785 | ⏳ Pending | PRD 3.8 |
-| 4.2 | 商品促销页 (Product Sale) | 0:8689 | ⏳ Pending | PRD 3.8 |
-| 4.3 | 商品完整页 (Product Full) | 0:8438 | ⏳ Pending | PRD 3.8 |
-| 4.4 | 商品规格选择 (Variations) | 0:8314 | ⏳ Pending | PRD 3.8 |
-
-### 阶段 5: 购物车与支付 (P0)
-
-| ID | 页面名称 | Figma Node | 状态 | 备注 |
-|----|----------|------------|------|------|
-| 5.1 | 购物车 (Cart) | 0:7209 | ⏳ Pending | PRD 4.3 |
-| 5.2 | 空购物车 - 从心愿单 | 0:7085 | ⏳ Pending | - |
-| 5.3 | 空购物车 - 从热门 | 0:6969 | ⏳ Pending | - |
-| 5.4 | 支付页 (Payment) | 0:6830 | ⏳ Pending | - |
-| 5.5 | 添加优惠券 | 0:6638 | ⏳ Pending | - |
-
-### 阶段 6: 其他功能 (P1)
-
-| ID | 页面名称 | Figma Node | 状态 | 备注 |
-|----|----------|------------|------|------|
-| 6.1 | 个人中心 (Profile) | 0:11956 | ⏳ Pending | - |
-| 6.2 | 完整个人资料 | 0:11472 | ⏳ Pending | - |
-| 6.3 | 心愿单 (Wishlist) | 0:7998 | ⏳ Pending | - |
-| 6.4 | 搜索功能 | 0:9375 | ⏳ Pending | - |
-| 6.5 | 分类筛选 | 0:9526 | ⏳ Pending | - |
-| 6.6 | 聊天功能 | 0:3542-0:2400 | ⏳ Pending | - |
-| 6.7 | 设置 | 0:1460 | ⏳ Pending | - |
+验证 Shoppe iOS 项目中 PRD.md 定义的所有页面是否已正确实现，并确保每个实现的页面与 Figma 设计稿精确对齐。
 
 ---
 
-## 技术规范
+## Phase 0: 上下文恢复
 
-### 架构模式
-- **MVVM** (Model-View-ViewModel)
-- SwiftUI + Combine
-
-### 目录结构
-```
-ShoppeiOS/
-├── Models/           # 数据模型
-├── Views/            # SwiftUI Views
-│   ├── Auth/         # 认证相关
-│   ├── Shop/         # 商城相关
-│   ├── Product/      # 商品详情
-│   ├── Cart/         # 购物车
-│   └── Profile/      # 个人中心
-├── ViewModels/       # ViewModel
-├── Components/       # 可复用组件
-├── Services/         # API 服务
-├── Utils/            # 工具类
-└── Resources/        # 资源文件
-```
-
-### 设计 Tokens
-- 颜色、字体、间距从 Figma 提取
-- 统一使用 Design System
-
-### 代码要求
-- 纯代码实现 (Storyboard)
-- 支持 iOS 16+
-- 使用 Swift 5.9+
+- [x] 读取 PRD.md 识别所有页面需求
+- [ ] 读取现有进度文件了解已实现状态
+- [ ] 获取 Figma 文件结构和节点映射
 
 ---
 
-## 执行顺序
+## Phase 1: PRD 页面清单识别
 
-1. ✅ 阶段 1: 认证流程 (Task 1.1 → 1.8)
-2. ⏳ 阶段 2: 引导流程 (Task 2.1 → 2.2)
-3. ⏳ 阶段 3: 商城首页 (Task 3.1 → 3.2)
-4. ⏳ 阶段 4: 商品详情 (Task 4.1 → 4.4)
-5. ⏳ 阶段 5: 购物车与支付 (Task 5.1 → 5.5)
-6. ⏳ 阶段 6: 其他功能 (Task 6.1 → 6.7)
+从 PRD.md 提取所有页面需求：
+
+| PRD 章节 | 页面名称 | 文件路径 | 优先级 |
+|---------|---------|---------|--------|
+| 3.1 | 启动页 (StartPage) | Views/Auth/StartPage.swift | P0 |
+| 3.2 | 注册页 (CreateAccount) | Views/Auth/CreateAccount.swift | P0 |
+| 3.3 | 登录页 (LoginPage) | Views/Auth/LoginPage.swift | P0 |
+| 3.4 | 密码页 (PasswordPage) | Views/Auth/PasswordPage.swift | P0 |
+| 3.4 | 密码输入态 (PasswordTypingPage) | Views/Auth/PasswordTypingPage.swift | P0 |
+| 3.4 | 密码错误态 (WrongPasswordPage) | Views/Auth/WrongPasswordPage.swift | P0 |
+| 3.5 | 密码找回 - 选择 (PasswordRecoveryPage) | Views/Auth/PasswordRecoveryPage.swift | P0 |
+| 3.5 | 密码找回 - 验证码 (PasswordRecoveryCodePage) | Views/Auth/PasswordRecoveryCodePage.swift | P0 |
+| 3.5 | 密码找回 - 新密码 (NewPasswordPage) | Views/Auth/NewPasswordPage.swift | P0 |
+| 3.5 | 最大尝试次数 (MaximumAttemptsPage) | Views/Auth/MaximumAttemptsPage.swift | P0 |
+| 3.6 | 引导页 - Hello (HelloCardPage) | Views/Onboarding/HelloCardPage.swift | P0 |
+| 3.6 | 引导页 - Ready (ReadyCardPage) | Views/Onboarding/ReadyCardPage.swift | P0 |
+| 3.7 | 商城首页 (ShopPage) | Views/Shop/ShopPage.swift | P0 |
+| 3.8 | 商品详情页 (ProductDetailPage) | Views/Product/ProductDetailPage.swift | P0 |
+| 4.x | 购物车 (CartPage) | Views/Cart/CartPage.swift | P0 |
+| 4.x | 空购物车 - 心愿单 | Views/Cart/EmptyCartFromWishlist.swift | P0 |
+| 4.x | 空购物车 - 热门 | Views/Cart/EmptyCartFromPopular.swift | P0 |
+| 4.x | 支付页 (PaymentPage) | Views/Payment/PaymentPage.swift | P0 |
+| 4.x | 添加优惠券 (AddCouponPage) | Views/Payment/AddCouponPage.swift | P0 |
 
 ---
 
-## 完成标准
+## Phase 2: 文件实现验证
 
-- [ ] 所有 P0 页面完成
-- [ ] UI 与 Figma 设计稿一致
-- [ ] 交互逻辑符合 PRD
-- [ ] 代码可编译运行
-- [ ] 每个页面包含 Mock 数据预览
+对每个页面执行：
+1. 检查 Swift 文件是否存在
+2. 检查文件内容完整性
+3. 标记缺失或异常的页面
+
+---
+
+## Phase 3: Figma 设计对齐验证
+
+对每个已实现的页面：
+1. 获取 Figma 设计上下文 (get_design_context)
+2. 获取设计截图 (get_screenshot)
+3. 比较实现与设计的差异
+4. 记录对齐度评分
+
+---
+
+## Phase 4: 汇总报告
+
+输出：
+1. 已实现页面清单
+2. 缺失页面清单
+3. Figma 对齐度报告
+4. 需要修复的问题列表
+
+---
+
+## Phase 5: 待完成功能实现
+
+实现 4 个待完成功能：
+
+| 功能 | 页面 | 实现内容 |
+|------|------|---------|
+| 5.1 | 引导页滑动切换 | 添加手势支持、完善 4 页引导 |
+| 5.2 | 密码验证导航 | 添加默认账号验证逻辑 (test@gmail.com / 12345678) |
+| 5.3 | 验证码错误计数 | 添加本地错误计数逻辑 |
+| 5.4 | 商品详情页完善 | 配送方式、用户评价 UI |
+
+---
+
+## Decisions & Notes
+
+- Figma 文件 Key: HPtpuBt4RrvXdzDLy4vUN1
+- 使用 Figma MCP 进行设计验证
+- 对齐度评分标准：
+  - ✅ ~95%: 布局、颜色、字体、间距均一致
+  - ⚠️ ~80%: 主要元素一致，细节有差异
+  - ❌ <80%: 结构或视觉存在显著差异
+- 默认测试账号：test@gmail.com / 12345678
+
+---
+
+## Phase Status
+
+| Phase | Status | Notes |
+|-------|--------|-------|
+| Phase 0: 上下文恢复 | completed | 初始化完成 |
+| Phase 1: PRD 页面清单识别 | completed | 19 个 P0 页面已识别 |
+| Phase 2: 文件实现验证 | completed | 19/19 文件存在 |
+| Phase 3: Figma 设计对齐验证 | completed | 19/19 已验证 (~95%) |
+| Phase 4: 汇总报告 | completed | 验证报告已生成 |
+| Phase 5: 待完成功能实现 | in_progress | 5.1 已完成，5.2 进行中 |
