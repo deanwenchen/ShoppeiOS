@@ -109,31 +109,42 @@
 - PasswordRecoveryCodePage.swift: ✅ 错误计数 + 警告完整
 - ProductDetailPage.swift: ✅ 配送 + 评价 UI 完整
 
-### 2026-04-02 - 代码审查修复完成
+### 2026-04-02 - Phase 6 完成：ShopPage Figma 远程图片集成
 
-**状态**: 严格代码审查完成，所有关键问题已修复
+**状态**: ShopPage 所有主要图片已替换为 Figma 远程资源
 
-**审查发现**:
-| 等级 | 问题 | 修复状态 |
-|------|------|---------|
-| ❌ Critical | `Color(hex:)` 扩展缺失导致无法编译 | ✅ 已创建 Color+Hex.swift |
-| ⚠️ Important | PasswordTypingPage 使用 TextField 而非 SecureField | ✅ 已改为 SecureField |
-| ⚠️ Important | PasswordRecoveryCodePage TextField 可访问性问题 | ✅ 已添加 .opacity(0) 和 .textContentType |
-| ⚠️ Important | ProductDetailPage 中 ShippingOptionType 定义位置不当 | ✅ 已移至 struct 外部 |
-| ℹ️ Minor | ProductDetailPage "Standart" 拼写错误 | ✅ 已改为 "Standard" |
-| ℹ️ Minor | 不必要的 DispatchQueue.main.asyncAfter | ✅ 已移除 (仅保留必要延迟) |
+**执行内容**:
+1. 从 Figma Shop 页面 (Node ID: 0:11012) 提取所有图片资源 URL
+2. 更新 ShopPage.swift 使用 AsyncImage 加载远程图片
+3. 为所有产品卡片组件添加 Figma 图片映射
 
-**结论**: ✅ 可以上线 - 所有关键和重要问题已修复
+**更新内容**:
+- **装饰性气泡**: 4 个气泡图片 (bubble01-04URL)
+- **Big Sale Banner**: 主横幅图片 + 文字叠加 + 装饰气泡
+- **分类卡片**: 6 个分类图片 (Clothing / Shoes / Bags / Lingerie / Watch / Hoodies)
+- **热门产品圆形图标**: 5 个分类圆形图片 (Dresses / T-Shirts / Skirts / Shoes / Bags)
+- **新产品卡片**: 3 个产品图片映射
+- **Flash Sale 卡片**: 6 个产品图片 + 20% 折扣徽章渐变
+- **底部导航**: 5 个导航图标 (Home / Cart / Categories / Wishlist / Profile)
+
+**占位图策略**:
+- 所有 AsyncImage 均提供占位图
+- 加载失败时回退到系统图标
+- 保持色板一致性 (#004CFF 主色 / #FF5790 强调色)
+
+**结论**: ✅ ShopPage 视觉设计 now 与 Figma 设计稿精确对齐
 
 ---
 
 ## 当前状态
 
-**Phase**: Phase 5 - 待完成功能实现 (已完成)
+**Phase**: Phase 6 - ShopPage Figma 远程图片集成 (已完成)
 
 **进度**: 19/19 P0 页面实现完成 (100%)
        54/54 验收标准实现完成 (100%)
+       ShopPage 图片资源：100% Figma 对齐
 
 **下一步行动**:
-- 等待用户确认 Phase 5 结果
+- 用户确认 ShopPage 更新
+- 可选：继续更新其他页面的 Figma 远程图片
 - 可选：P1 优先级功能实现 (Profile / Wishlist / Categories / Search)

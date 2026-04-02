@@ -15,7 +15,8 @@
       "mcp__figma__get_metadata",
       "Bash(git commit:*)",
       "Bash(git remote:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "mcp__figma__search_design_system"
     ]
   },
   "enableAllProjectMcpServers": true,

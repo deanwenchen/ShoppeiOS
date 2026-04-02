@@ -11,6 +11,11 @@ struct PasswordRecoveryCodePage: View {
     let maxAttempts = 3
     let correctCode = "1234" // Simulated correct verification code
 
+    // Figma Design Assets
+    private let avatarImageURL = "https://www.figma.com/api/mcp/asset/34c181ae-660c-41bd-a8e4-8746dfbadca8"
+    private let bubble01URL = "https://www.figma.com/api/mcp/asset/b789cd98-34fb-45dc-a553-ed34c3a7bd55"
+    private let bubble02URL = "https://www.figma.com/api/mcp/asset/cb8bd147-baaa-43cd-b3ec-9b34cb7b1732"
+
     var body: some View {
         ZStack {
             // Background
@@ -33,12 +38,19 @@ struct PasswordRecoveryCodePage: View {
                         .stroke(Color.white, lineWidth: 4)
                         .frame(width: 100, height: 100)
 
-                    // User Avatar
-                    Image(systemName: "person.fill")
-                        .font(.system(size: 50, weight: .regular))
-                        .foregroundColor(Color(hex: "#FFB6C1"))
-                        .background(Circle().fill(Color(hex: "#FFD1DC")))
-                        .clipShape(Circle())
+                    // User Avatar from Figma
+                    AsyncImage(url: URL(string: avatarImageURL)) { image in
+                        image.resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                    } placeholder: {
+                        Image(systemName: "person.fill")
+                            .font(.system(size: 50, weight: .regular))
+                            .foregroundColor(Color(hex: "#FFB6C1"))
+                            .background(Circle().fill(Color(hex: "#FFD1DC")))
+                            .clipShape(Circle())
+                    }
                 }
                 .padding(.top, 60)
 
@@ -182,20 +194,36 @@ struct PasswordRecoveryCodePage: View {
     private var decorativeBubbles: some View {
         ZStack {
             // Bubble 01
-            Image(systemName: "circle.fill")
-                .resizable()
-                .foregroundColor(Color(hex: "#004CFF").opacity(0.1))
-                .frame(width: 400, height: 400)
-                .offset(x: -100, y: -200)
-                .rotationEffect(.degrees(92))
+            AsyncImage(url: URL(string: bubble01URL)) { image in
+                image.resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 400, height: 400)
+                    .offset(x: -100, y: -200)
+                    .rotationEffect(.degrees(92))
+                    .opacity(0.1)
+            } placeholder: {
+                Circle()
+                    .fill(Color(hex: "#004CFF").opacity(0.1))
+                    .frame(width: 400, height: 400)
+                    .offset(x: -100, y: -200)
+                    .rotationEffect(.degrees(92))
+            }
 
             // Bubble 02
-            Image(systemName: "circle.fill")
-                .resizable()
-                .foregroundColor(Color(hex: "#004CFF").opacity(0.12))
-                .frame(width: 350, height: 350)
-                .offset(x: 100, y: -150)
-                .rotationEffect(.degrees(-110))
+            AsyncImage(url: URL(string: bubble02URL)) { image in
+                image.resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 350, height: 350)
+                    .offset(x: 100, y: -150)
+                    .rotationEffect(.degrees(-110))
+                    .opacity(0.12)
+            } placeholder: {
+                Circle()
+                    .fill(Color(hex: "#004CFF").opacity(0.12))
+                    .frame(width: 350, height: 350)
+                    .offset(x: 100, y: -150)
+                    .rotationEffect(.degrees(-110))
+            }
         }
     }
 

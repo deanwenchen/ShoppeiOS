@@ -1,6 +1,12 @@
 import SwiftUI
 
 struct HelloCardPage: View {
+    // Figma Design Assets
+    private let heroImageURL = "https://www.figma.com/api/mcp/asset/2573f889-36e4-4317-ad75-a6b0c7cd4ed0"
+    private let bubble01URL = "https://www.figma.com/api/mcp/asset/519160aa-3a48-4b71-9e85-b0e06d486ccc"
+    private let bubble02URL = "https://www.figma.com/api/mcp/asset/a43f07da-7d51-4897-add2-7141a47f82cc"
+    private let dotInactiveURL = "https://www.figma.com/api/mcp/asset/af888051-ebcf-4abb-b055-bb6a49f058a2"
+    private let dotActiveURL = "https://www.figma.com/api/mcp/asset/e1a3cc67-c083-4419-88bd-ff0acc1c24ed"
     var body: some View {
         ZStack {
             // Background
@@ -28,11 +34,18 @@ struct HelloCardPage: View {
                                 .fill(Color(hex: "#FFD1DC"))
                                 .frame(width: 377, height: 421)
 
-                            // Woman with shopping bags image
-                            Image(systemName: "person.2.fill")
-                                .font(.system(size: 150, weight: .regular))
-                                .foregroundColor(Color(hex: "#FFB6C1"))
-                                .frame(width: 200, height: 300)
+                            // Woman with shopping bags image from Figma
+                            AsyncImage(url: URL(string: heroImageURL)) { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 377, height: 421)
+                                    .clipShape(RoundedRectangle(cornerRadius: 30))
+                            } placeholder: {
+                                Image(systemName: "person.2.fill")
+                                    .font(.system(size: 150, weight: .regular))
+                                    .foregroundColor(Color(hex: "#FFB6C1"))
+                                    .frame(width: 200, height: 300)
+                            }
                         }
                         .cornerRadius(30)
 
@@ -85,20 +98,36 @@ struct HelloCardPage: View {
     private var decorativeBubbles: some View {
         ZStack {
             // Bubble 01
-            Image(systemName: "circle.fill")
-                .resizable()
-                .foregroundColor(Color(hex: "#004CFF").opacity(0.1))
-                .frame(width: 400, height: 400)
-                .offset(x: -100, y: -200)
-                .rotationEffect(.degrees(92))
+            AsyncImage(url: URL(string: bubble01URL)) { image in
+                image.resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 400, height: 400)
+                    .offset(x: -100, y: -200)
+                    .rotationEffect(.degrees(92))
+                    .opacity(0.1)
+            } placeholder: {
+                Circle()
+                    .fill(Color(hex: "#004CFF").opacity(0.1))
+                    .frame(width: 400, height: 400)
+                    .offset(x: -100, y: -200)
+                    .rotationEffect(.degrees(92))
+            }
 
             // Bubble 02
-            Image(systemName: "circle.fill")
-                .resizable()
-                .foregroundColor(Color(hex: "#004CFF").opacity(0.12))
-                .frame(width: 350, height: 350)
-                .offset(x: 100, y: -150)
-                .rotationEffect(.degrees(-110))
+            AsyncImage(url: URL(string: bubble02URL)) { image in
+                image.resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 350, height: 350)
+                    .offset(x: 100, y: -150)
+                    .rotationEffect(.degrees(-110))
+                    .opacity(0.12)
+            } placeholder: {
+                Circle()
+                    .fill(Color(hex: "#004CFF").opacity(0.12))
+                    .frame(width: 350, height: 350)
+                    .offset(x: 100, y: -150)
+                    .rotationEffect(.degrees(-110))
+            }
         }
     }
 }

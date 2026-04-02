@@ -1,6 +1,12 @@
 import SwiftUI
 
 struct ReadyCardPage: View {
+    // Figma Design Assets
+    private let heroImageURL = "https://www.figma.com/api/mcp/asset/28737776-dbf1-405e-9a30-5fd7efc8c1d3"
+    private let bubble01URL = "https://www.figma.com/api/mcp/asset/6a54f1a5-362c-4ba3-94ee-6b6408090fd9"
+    private let bubble02URL = "https://www.figma.com/api/mcp/asset/04ab5c04-a9dd-4dd4-a291-887de2732411"
+    private let dotInactiveURL = "https://www.figma.com/api/mcp/asset/67292634-f293-4c54-a5dd-6bbbda2f8b1a"
+    private let dotActiveURL = "https://www.figma.com/api/mcp/asset/4e3a9432-33f1-454b-89a1-edd5b7403927"
     var body: some View {
         ZStack {
             // Background
@@ -24,11 +30,18 @@ struct ReadyCardPage: View {
                     VStack(spacing: 0) {
                         // Hero Image
                         ZStack {
-                            // Image of women with shopping bags
-                            Image(systemName: "person.2.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 377, height: 220)
+                            // Image of women with shopping bags from Figma
+                            AsyncImage(url: URL(string: heroImageURL)) { image in
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 377, height: 220)
+                                    .clipShape(RoundedRectangle(cornerRadius: 30))
+                            } placeholder: {
+                                Image(systemName: "person.2.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 377, height: 220)
+                            }
                         }
                         .cornerRadius(30)
                         .frame(width: 377, height: 220)
@@ -104,20 +117,36 @@ struct ReadyCardPage: View {
     private var decorativeBubbles: some View {
         ZStack {
             // Bubble 01
-            Image(systemName: "circle.fill")
-                .resizable()
-                .foregroundColor(Color(hex: "#004CFF").opacity(0.1))
-                .frame(width: 400, height: 400)
-                .offset(x: -100, y: -200)
-                .rotationEffect(.degrees(92))
+            AsyncImage(url: URL(string: bubble01URL)) { image in
+                image.resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 400, height: 400)
+                    .offset(x: -100, y: -200)
+                    .rotationEffect(.degrees(92))
+                    .opacity(0.1)
+            } placeholder: {
+                Circle()
+                    .fill(Color(hex: "#004CFF").opacity(0.1))
+                    .frame(width: 400, height: 400)
+                    .offset(x: -100, y: -200)
+                    .rotationEffect(.degrees(92))
+            }
 
             // Bubble 02
-            Image(systemName: "circle.fill")
-                .resizable()
-                .foregroundColor(Color(hex: "#004CFF").opacity(0.12))
-                .frame(width: 350, height: 350)
-                .offset(x: 100, y: -150)
-                .rotationEffect(.degrees(-110))
+            AsyncImage(url: URL(string: bubble02URL)) { image in
+                image.resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 350, height: 350)
+                    .offset(x: 100, y: -150)
+                    .rotationEffect(.degrees(-110))
+                    .opacity(0.12)
+            } placeholder: {
+                Circle()
+                    .fill(Color(hex: "#004CFF").opacity(0.12))
+                    .frame(width: 350, height: 350)
+                    .offset(x: 100, y: -150)
+                    .rotationEffect(.degrees(-110))
+            }
         }
     }
 }

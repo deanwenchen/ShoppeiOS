@@ -5,6 +5,12 @@ struct MaximumAttemptsPage: View {
     @State private var showingAlert: Bool = true
     @FocusState private var isCodeFocused: Bool
 
+    // Figma Design Assets
+    private let avatarImageURL = "https://www.figma.com/api/mcp/asset/6d62c92d-cd49-48bf-b759-173dff14b786"
+    private let bubble01URL = "https://www.figma.com/api/mcp/asset/9ae0212c-4225-464e-8138-5820fde9e4bc"
+    private let bubble02URL = "https://www.figma.com/api/mcp/asset/0659f65d-d1a0-4dea-9ed8-d98269a3cf9c"
+    private let warningIconURL = "https://www.figma.com/api/mcp/asset/5338e7b5-8384-470a-a223-9b5321266453"
+
     var body: some View {
         ZStack {
             // Background
@@ -27,12 +33,19 @@ struct MaximumAttemptsPage: View {
                         .stroke(Color.white, lineWidth: 4)
                         .frame(width: 100, height: 100)
 
-                    // User Avatar
-                    Image(systemName: "person.fill")
-                        .font(.system(size: 50, weight: .regular))
-                        .foregroundColor(Color(hex: "#FFB6C1"))
-                        .background(Circle().fill(Color(hex: "#FFD1DC")))
-                        .clipShape(Circle())
+                    // User Avatar from Figma
+                    AsyncImage(url: URL(string: avatarImageURL)) { image in
+                        image.resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                    } placeholder: {
+                        Image(systemName: "person.fill")
+                            .font(.system(size: 50, weight: .regular))
+                            .foregroundColor(Color(hex: "#FFB6C1"))
+                            .background(Circle().fill(Color(hex: "#FFD1DC")))
+                            .clipShape(Circle())
+                    }
                 }
                 .padding(.top, 60)
 
@@ -111,20 +124,36 @@ struct MaximumAttemptsPage: View {
     private var decorativeBubbles: some View {
         ZStack {
             // Bubble 01
-            Image(systemName: "circle.fill")
-                .resizable()
-                .foregroundColor(Color(hex: "#004CFF").opacity(0.1))
-                .frame(width: 400, height: 400)
-                .offset(x: -100, y: -200)
-                .rotationEffect(.degrees(92))
+            AsyncImage(url: URL(string: bubble01URL)) { image in
+                image.resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 400, height: 400)
+                    .offset(x: -100, y: -200)
+                    .rotationEffect(.degrees(92))
+                    .opacity(0.1)
+            } placeholder: {
+                Circle()
+                    .fill(Color(hex: "#004CFF").opacity(0.1))
+                    .frame(width: 400, height: 400)
+                    .offset(x: -100, y: -200)
+                    .rotationEffect(.degrees(92))
+            }
 
             // Bubble 02
-            Image(systemName: "circle.fill")
-                .resizable()
-                .foregroundColor(Color(hex: "#004CFF").opacity(0.12))
-                .frame(width: 350, height: 350)
-                .offset(x: 100, y: -150)
-                .rotationEffect(.degrees(-110))
+            AsyncImage(url: URL(string: bubble02URL)) { image in
+                image.resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 350, height: 350)
+                    .offset(x: 100, y: -150)
+                    .rotationEffect(.degrees(-110))
+                    .opacity(0.12)
+            } placeholder: {
+                Circle()
+                    .fill(Color(hex: "#004CFF").opacity(0.12))
+                    .frame(width: 350, height: 350)
+                    .offset(x: 100, y: -150)
+                    .rotationEffect(.degrees(-110))
+            }
         }
     }
 
@@ -137,21 +166,28 @@ struct MaximumAttemptsPage: View {
                 .frame(width: 347, height: 225)
 
             VStack(spacing: 0) {
-                // Icon
-                ZStack {
-                    Circle()
-                        .fill(Color(hex: "#FFB6C1"))
+                // Warning Icon from Figma
+                AsyncImage(url: URL(string: warningIconURL)) { image in
+                    image.resizable()
+                        .aspectRatio(contentMode: .fit)
                         .frame(width: 80, height: 80)
+                        .offset(y: -45)
+                } placeholder: {
+                    ZStack {
+                        Circle()
+                            .fill(Color(hex: "#FFB6C1"))
+                            .frame(width: 80, height: 80)
 
-                    Circle()
-                        .fill(Color.white)
-                        .frame(width: 50, height: 50)
+                        Circle()
+                            .fill(Color.white)
+                            .frame(width: 50, height: 50)
 
-                    Image(systemName: "exclamationmark")
-                        .font(.system(size: 24, weight: .bold))
-                        .foregroundColor(Color(hex: "#FFB6C1"))
+                        Image(systemName: "exclamationmark")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundColor(Color(hex: "#FFB6C1"))
+                    }
+                    .offset(y: -45)
                 }
-                .offset(y: -45)
 
                 // Message
                 Text("You reached out maximum amount of attempts. Please, try later.")
