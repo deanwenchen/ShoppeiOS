@@ -117,3 +117,4 @@
 | Phase 10: Onboarding 页面 Figma 远程图片集成 | completed | HelloCardPage/ReadyCardPage 图片 100% Figma 对齐 |
 | Phase 11: EmptyCart 页面 Figma 远程图片集成 | completed | EmptyCartFromWishlistView/EmptyCartFromPopularView 图片 100% Figma 对齐 |
 | Phase 12: Figma 远程图片集成总结 | completed | 7 个主要页面、70+ 图片资源、完整报告生成 |
+| Phase 13: ImageURLProvider 重构 | completed | 中央化工具类、消除重复代码、编译错误修复 |

@@ -164,6 +164,38 @@
 - 总图片资源：70+ 唯一 URL
 - 代码变更：~300 行新增
 
+### 2026-04-02 - Phase 13 完成：ImageURLProvider 重构
+
+**状态**: 图片 URL 管理重构为中央化工具类
+
+**执行内容**:
+1. 创建 `ImageURLProvider.swift` 统一工具类
+2. 移除重复的全局 `getProductImageURL(for:)` 函数
+3. 整合所有图片 URL 方法到单一来源
+
+**重构收益**:
+- ✅ 消除 4 个重复全局函数（编译错误修复）
+- ✅ 所有 70+ Figma CDN URL 集中管理
+- ✅ 支持颜色标准化（`.uppercased().trimmingCharacters(in: .whitespaces)`）
+- ✅ 4 个静态方法：
+  - `getProductImageURL(for:)` - 商品图片
+  - `getVariationImageURL(for:)` - 变体缩略图
+  - `getBubbleImageURL(id:)` - 装饰气泡
+  - `getOnboardingHeroImageURL(page:)` - 引导页英雄图
+
+**更新文件列表**:
+- ShoppeiOS/Utilities/ImageURLProvider.swift (新建)
+- CartPage.swift (移除重复函数，改用 ImageURLProvider)
+- EmptyCartFromWishlistView.swift (移除重复函数，改用 ImageURLProvider)
+- EmptyCartFromPopularView.swift (移除重复函数，改用 ImageURLProvider)
+- PaymentPage.swift (移除重复函数，改用 ImageURLProvider)
+- ProductDetailPage.swift (移除未使用 URL 常量，改用 ImageURLProvider)
+
+**技术说明**:
+- 所有 AsyncImage 调用位置保持不变
+- 图片显示位置和布局完全一致
+- 仅 URL 来源改为集中管理
+
 ---
 
 ## 当前状态 - 会话总结
@@ -197,6 +229,6 @@
 - P1 功能需等待 PRD 详细需求定义
 
 **下一步行动**:
-- 用户确认 ShopPage 更新
+- ✅ 生成完整页面与 Figma 地址对照表 (figma_pages_summary.md)
 - 可选：继续更新其他页面的 Figma 远程图片
 - 可选：P1 优先级功能实现 (Profile / Wishlist / Categories / Search)

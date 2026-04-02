@@ -209,7 +209,7 @@ struct CartItemRow: View {
         HStack(spacing: 16) {
             // Product Image from Figma
             ZStack {
-                AsyncImage(url: URL(string: getProductImageURL(for: item.imageColor))) { image in
+                AsyncImage(url: URL(string: ImageURLProvider.getProductImageURL(for: item.imageColor))) { image in
                     image.resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 100, height: 100)
@@ -324,7 +324,7 @@ struct WishlistItemRow: View {
         HStack(spacing: 16) {
             // Product Image from Figma
             ZStack {
-                AsyncImage(url: URL(string: getProductImageURL(for: item.imageColor))) { image in
+                AsyncImage(url: URL(string: ImageURLProvider.getProductImageURL(for: item.imageColor))) { image in
                     image.resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 100, height: 100)
@@ -409,23 +409,5 @@ struct WishlistItemRow: View {
 struct CartPage_Previews: PreviewProvider {
     static var previews: some View {
         CartPage()
-    }
-}
-
-// MARK: - Product Image URL Helper
-func getProductImageURL(for color: String) -> String {
-    switch color {
-    case "#FFB6C1": // Pink
-        return "https://www.figma.com/api/mcp/asset/ed3e9463-9a3b-43ba-90b9-da37bf20ccaa"
-    case "#B6D4FF": // Blue
-        return "https://www.figma.com/api/mcp/asset/e3719d83-504e-4f54-a3b0-1b4760a4d9cb"
-    case "#FFF4B6": // Yellow
-        return "https://www.figma.com/api/mcp/asset/95dc9ed1-944f-49ec-b9f6-43b9e090d3da"
-    case "#FFD1DC": // Light Pink
-        return "https://www.figma.com/api/mcp/asset/d80951b1-d8df-4011-b71e-8824a19e43f1"
-    case "#E8F5E9": // Green
-        return "https://www.figma.com/api/mcp/asset/c8d6c11f-0ac9-411e-9169-335a6e032f55"
-    default:
-        return "https://www.figma.com/api/mcp/asset/d80951b1-d8df-4011-b71e-8824a19e43f1"
     }
 }
