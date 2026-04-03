@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @EnvironmentObject var appState: AppState
     @State private var currentPage: Int = 0
-    @State private var navigateToApp: Bool = false
 
     let totalPages = 4
 
@@ -58,9 +58,7 @@ struct OnboardingView: View {
                         pageIndex: 3,
                         showButton: true,
                         onButtonTap: {
-                            withAnimation {
-                                navigateToApp = true
-                            }
+                            appState.navigateTo(.shop)
                         }
                     )
                     .tag(3)
@@ -91,10 +89,6 @@ struct OnboardingView: View {
                     .frame(width: 134, height: 5)
                     .padding(.bottom, 8)
             }
-        }
-        .navigationBarHidden(true)
-        .navigationDestination(isPresented: $navigateToApp) {
-            ShopPage()
         }
     }
 

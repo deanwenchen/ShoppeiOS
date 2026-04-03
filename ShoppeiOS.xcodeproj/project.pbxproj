@@ -1,0 +1,611 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A1000001 /* ShoppeiOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001 /* ShoppeiOSApp.swift */; };
+		A1000002 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000002 /* Color+Hex.swift */; };
+		A1000003 /* ImageURLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000003 /* ImageURLProvider.swift */; };
+		A1000004 /* FormFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000004 /* FormFields.swift */; };
+		A1000005 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000005 /* RootView.swift */; };
+		// Auth Views
+		A1000010 /* StartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000010 /* StartPage.swift */; };
+		A1000011 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000011 /* CreateAccount.swift */; };
+		A1000012 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000012 /* LoginPage.swift */; };
+		A1000013 /* PasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000013 /* PasswordPage.swift */; };
+		A1000014 /* WrongPasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000014 /* WrongPasswordPage.swift */; };
+		A1000015 /* PasswordRecoveryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000015 /* PasswordRecoveryPage.swift */; };
+		A1000016 /* PasswordTypingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000016 /* PasswordTypingPage.swift */; };
+		A1000017 /* PasswordRecoveryCodePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000017 /* PasswordRecoveryCodePage.swift */; };
+		A1000018 /* NewPasswordPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000018 /* NewPasswordPage.swift */; };
+		A1000019 /* MaximumAttemptsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000019 /* MaximumAttemptsPage.swift */; };
+		// Onboarding Views
+		A1000020 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000020 /* OnboardingView.swift */; };
+		A1000021 /* HelloCardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000021 /* HelloCardPage.swift */; };
+		A1000022 /* ReadyCardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000022 /* ReadyCardPage.swift */; };
+		// Shop Views
+		A1000030 /* ShopPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000030 /* ShopPage.swift */; };
+		A1000031 /* FlashSaleLivePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000031 /* FlashSaleLivePage.swift */; };
+		// Product Views
+		A1000040 /* ProductDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000040 /* ProductDetailPage.swift */; };
+		A1000041 /* ProductSalePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000041 /* ProductSalePage.swift */; };
+		A1000042 /* ProductFullPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000042 /* ProductFullPage.swift */; };
+		A1000043 /* ProductVariationsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000043 /* ProductVariationsPage.swift */; };
+		// Cart Views
+		A1000050 /* CartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000050 /* CartPage.swift */; };
+		A1000051 /* EmptyCartFromWishlistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000051 /* EmptyCartFromWishlistView.swift */; };
+		A1000052 /* EmptyCartFromPopularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000052 /* EmptyCartFromPopularView.swift */; };
+		// Payment Views
+		A1000060 /* PaymentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000060 /* PaymentPage.swift */; };
+		A1000061 /* AddVoucherSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000061 /* AddVoucherSheet.swift */; };
+		// ViewModels
+		A1000070 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000070 /* ShopViewModel.swift */; };
+		A1000071 /* FlashSaleLiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000071 /* FlashSaleLiveViewModel.swift */; };
+		A1000072 /* ProductDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000072 /* ProductDetailViewModel.swift */; };
+		A1000073 /* ProductSaleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000073 /* ProductSaleViewModel.swift */; };
+		A1000074 /* ProductFullViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000074 /* ProductFullViewModel.swift */; };
+		A1000075 /* ProductVariationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000075 /* ProductVariationsViewModel.swift */; };
+		A1000076 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000076 /* CartViewModel.swift */; };
+		A1000077 /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000077 /* PaymentViewModel.swift */; };
+		A1000078 /* AddVoucherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000078 /* AddVoucherViewModel.swift */; };
+		A1000080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000080 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A2000001 /* ShoppeiOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppeiOSApp.swift; sourceTree = "<group>"; };
+		A2000002 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		A2000003 /* ImageURLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURLProvider.swift; sourceTree = "<group>"; };
+		A2000004 /* FormFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormFields.swift; sourceTree = "<group>"; };
+		A2000005 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		// Auth Views
+		A2000010 /* StartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPage.swift; sourceTree = "<group>"; };
+		A2000011 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
+		A2000012 /* LoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
+		A2000013 /* PasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPage.swift; sourceTree = "<group>"; };
+		A2000014 /* WrongPasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrongPasswordPage.swift; sourceTree = "<group>"; };
+		A2000015 /* PasswordRecoveryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPage.swift; sourceTree = "<group>"; };
+		A2000016 /* PasswordTypingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTypingPage.swift; sourceTree = "<group>"; };
+		A2000017 /* PasswordRecoveryCodePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryCodePage.swift; sourceTree = "<group>"; };
+		A2000018 /* NewPasswordPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasswordPage.swift; sourceTree = "<group>"; };
+		A2000019 /* MaximumAttemptsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaximumAttemptsPage.swift; sourceTree = "<group>"; };
+		// Onboarding Views
+		A2000020 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A2000021 /* HelloCardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloCardPage.swift; sourceTree = "<group>"; };
+		A2000022 /* ReadyCardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyCardPage.swift; sourceTree = "<group>"; };
+		// Shop Views
+		A2000030 /* ShopPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPage.swift; sourceTree = "<group>"; };
+		A2000031 /* FlashSaleLivePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSaleLivePage.swift; sourceTree = "<group>"; };
+		// Product Views
+		A2000040 /* ProductDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailPage.swift; sourceTree = "<group>"; };
+		A2000041 /* ProductSalePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSalePage.swift; sourceTree = "<group>"; };
+		A2000042 /* ProductFullPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFullPage.swift; sourceTree = "<group>"; };
+		A2000043 /* ProductVariationsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVariationsPage.swift; sourceTree = "<group>"; };
+		// Cart Views
+		A2000050 /* CartPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartPage.swift; sourceTree = "<group>"; };
+		A2000051 /* EmptyCartFromWishlistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartFromWishlistView.swift; sourceTree = "<group>"; };
+		A2000052 /* EmptyCartFromPopularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartFromPopularView.swift; sourceTree = "<group>"; };
+		// Payment Views
+		A2000060 /* PaymentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentPage.swift; sourceTree = "<group>"; };
+		A2000061 /* AddVoucherSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoucherSheet.swift; sourceTree = "<group>"; };
+		// ViewModels
+		A2000070 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		A2000071 /* FlashSaleLiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSaleLiveViewModel.swift; sourceTree = "<group>"; };
+		A2000072 /* ProductDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewModel.swift; sourceTree = "<group>"; };
+		A2000073 /* ProductSaleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSaleViewModel.swift; sourceTree = "<group>"; };
+		A2000074 /* ProductFullViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductFullViewModel.swift; sourceTree = "<group>"; };
+		A2000075 /* ProductVariationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVariationsViewModel.swift; sourceTree = "<group>"; };
+		A2000076 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		A2000077 /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		A2000078 /* AddVoucherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVoucherViewModel.swift; sourceTree = "<group>"; };
+		A2000080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2000090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2000091 /* ShoppeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A3000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A4000001 = {
+			isa = PBXGroup;
+			children = (
+				A4000010 /* ShoppeiOS */,
+				A4000090 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A4000010 /* ShoppeiOS */ = {
+			isa = PBXGroup;
+			children = (
+				A2000001 /* ShoppeiOSApp.swift */,
+				A2000005 /* RootView.swift */,
+				A4000011 /* Views */,
+				A4000012 /* ViewModels */,
+				A4000013 /* Extensions */,
+				A4000014 /* Utilities */,
+				A4000015 /* Components */,
+				A2000080 /* Assets.xcassets */,
+				A2000090 /* Info.plist */,
+			);
+			path = ShoppeiOS;
+			sourceTree = "<group>";
+		};
+		A4000011 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A400001A /* Auth */,
+				A400001B /* Onboarding */,
+				A400001C /* Shop */,
+				A400001D /* Product */,
+				A400001E /* Cart */,
+				A400001F /* Payment */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A4000012 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A400002A /* Shop */,
+				A400002B /* Product */,
+				A400002C /* Cart */,
+				A400002D /* Payment */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A4000013 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A2000002 /* Color+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A4000014 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A2000003 /* ImageURLProvider.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A4000015 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A2000004 /* FormFields.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A400001A /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				A2000010 /* StartPage.swift */,
+				A2000011 /* CreateAccount.swift */,
+				A2000012 /* LoginPage.swift */,
+				A2000013 /* PasswordPage.swift */,
+				A2000014 /* WrongPasswordPage.swift */,
+				A2000015 /* PasswordRecoveryPage.swift */,
+				A2000016 /* PasswordTypingPage.swift */,
+				A2000017 /* PasswordRecoveryCodePage.swift */,
+				A2000018 /* NewPasswordPage.swift */,
+				A2000019 /* MaximumAttemptsPage.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		A400001B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A2000020 /* OnboardingView.swift */,
+				A2000021 /* HelloCardPage.swift */,
+				A2000022 /* ReadyCardPage.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A400001C /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				A2000030 /* ShopPage.swift */,
+				A2000031 /* FlashSaleLivePage.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		A400001D /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				A2000040 /* ProductDetailPage.swift */,
+				A2000041 /* ProductSalePage.swift */,
+				A2000042 /* ProductFullPage.swift */,
+				A2000043 /* ProductVariationsPage.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		A400001E /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				A2000050 /* CartPage.swift */,
+				A2000051 /* EmptyCartFromWishlistView.swift */,
+				A2000052 /* EmptyCartFromPopularView.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		A400001F /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				A2000060 /* PaymentPage.swift */,
+				A2000061 /* AddVoucherSheet.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		A400002A /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				A2000070 /* ShopViewModel.swift */,
+				A2000071 /* FlashSaleLiveViewModel.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		A400002B /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				A2000072 /* ProductDetailViewModel.swift */,
+				A2000073 /* ProductSaleViewModel.swift */,
+				A2000074 /* ProductFullViewModel.swift */,
+				A2000075 /* ProductVariationsViewModel.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		A400002C /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				A2000076 /* CartViewModel.swift */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		A400002D /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				A2000077 /* PaymentViewModel.swift */,
+				A2000078 /* AddVoucherViewModel.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		A4000090 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A2000091 /* ShoppeiOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A5000001 /* ShoppeiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7000001 /* Build configuration list for PBXNativeTarget "ShoppeiOS" */;
+			buildPhases = (
+				A3000002 /* Sources */,
+				A3000001 /* Frameworks */,
+				A3000003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShoppeiOS;
+			productName = ShoppeiOS;
+			productReference = A2000091 /* ShoppeiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					A5000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = A7000002 /* Build configuration list for PBXProject "ShoppeiOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A4000001;
+			productRefGroup = A4000090 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5000001 /* ShoppeiOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A3000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000080 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A3000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000001 /* ShoppeiOSApp.swift in Sources */,
+				A1000005 /* RootView.swift in Sources */,
+				A1000002 /* Color+Hex.swift in Sources */,
+				A1000003 /* ImageURLProvider.swift in Sources */,
+				A1000004 /* FormFields.swift in Sources */,
+				A1000010 /* StartPage.swift in Sources */,
+				A1000011 /* CreateAccount.swift in Sources */,
+				A1000012 /* LoginPage.swift in Sources */,
+				A1000013 /* PasswordPage.swift in Sources */,
+				A1000014 /* WrongPasswordPage.swift in Sources */,
+				A1000015 /* PasswordRecoveryPage.swift in Sources */,
+				A1000016 /* PasswordTypingPage.swift in Sources */,
+				A1000017 /* PasswordRecoveryCodePage.swift in Sources */,
+				A1000018 /* NewPasswordPage.swift in Sources */,
+				A1000019 /* MaximumAttemptsPage.swift in Sources */,
+				A1000020 /* OnboardingView.swift in Sources */,
+				A1000021 /* HelloCardPage.swift in Sources */,
+				A1000022 /* ReadyCardPage.swift in Sources */,
+				A1000030 /* ShopPage.swift in Sources */,
+				A1000031 /* FlashSaleLivePage.swift in Sources */,
+				A1000040 /* ProductDetailPage.swift in Sources */,
+				A1000041 /* ProductSalePage.swift in Sources */,
+				A1000042 /* ProductFullPage.swift in Sources */,
+				A1000043 /* ProductVariationsPage.swift in Sources */,
+				A1000050 /* CartPage.swift in Sources */,
+				A1000051 /* EmptyCartFromWishlistView.swift in Sources */,
+				A1000052 /* EmptyCartFromPopularView.swift in Sources */,
+				A1000060 /* PaymentPage.swift in Sources */,
+				A1000061 /* AddVoucherSheet.swift in Sources */,
+				A1000070 /* ShopViewModel.swift in Sources */,
+				A1000071 /* FlashSaleLiveViewModel.swift in Sources */,
+				A1000072 /* ProductDetailViewModel.swift in Sources */,
+				A1000073 /* ProductSaleViewModel.swift in Sources */,
+				A1000074 /* ProductFullViewModel.swift in Sources */,
+				A1000075 /* ProductVariationsViewModel.swift in Sources */,
+				A1000076 /* CartViewModel.swift in Sources */,
+				A1000077 /* PaymentViewModel.swift in Sources */,
+				A1000078 /* AddVoucherViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		A8000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A8000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A8000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShoppeiOS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shoppe.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A8000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ShoppeiOS/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shoppe.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7000001 /* Build configuration list for PBXNativeTarget "ShoppeiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8000003 /* Debug */,
+				A8000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationIsName = Debug;
+		};
+		A7000002 /* Build configuration list for PBXProject "ShoppeiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8000001 /* Debug */,
+				A8000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationIsName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A6000001 /* Project object */;
+}

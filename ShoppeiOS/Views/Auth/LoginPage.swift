@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct LoginPage: View {
+    @EnvironmentObject var appState: AppState
     @State private var email: String = ""
 
     var body: some View {
@@ -49,7 +50,8 @@ struct LoginPage: View {
 
                 // Next Button
                 Button(action: {
-                    // Handle login step 1 - verify email
+                    // Navigate to password page
+                    appState.navigateTo(.password)
                 }) {
                     Text("Next")
                         .font(.system(size: 22, weight: .light))
@@ -64,7 +66,7 @@ struct LoginPage: View {
 
                 // Cancel Link
                 Button(action: {
-                    // Navigate back to Start
+                    appState.popToRoot()
                 }) {
                     Text("Cancel")
                         .font(.system(size: 15, weight: .light))
@@ -73,7 +75,6 @@ struct LoginPage: View {
                 .padding(.bottom, 24)
             }
         }
-        .navigationBarHidden(true)
     }
 
     // MARK: - Decorative Bubbles

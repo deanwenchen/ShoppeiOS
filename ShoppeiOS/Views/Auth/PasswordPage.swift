@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct PasswordPage: View {
+    @EnvironmentObject var appState: AppState
     @State private var password: String = ""
     @FocusState private var isPasswordFocused: Bool
 
@@ -76,7 +77,7 @@ struct PasswordPage: View {
 
                 // Not You? Button
                 Button(action: {
-                    // Navigate back to Login
+                    appState.popToRoot()
                 }) {
                     HStack(spacing: 8) {
                         Text("Not you?")
@@ -97,7 +98,6 @@ struct PasswordPage: View {
                 .padding(.bottom, 40)
             }
         }
-        .navigationBarHidden(true)
         .onAppear {
             isPasswordFocused = true
         }

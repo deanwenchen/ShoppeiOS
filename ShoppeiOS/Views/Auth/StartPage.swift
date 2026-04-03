@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct StartPage: View {
+    @EnvironmentObject var appState: AppState
+
     var body: some View {
         ZStack {
             // Background
@@ -48,7 +50,7 @@ struct StartPage: View {
 
                 // Main Button
                 Button(action: {
-                    // Navigate to Create Account
+                    appState.navigateTo(.createAccount)
                 }) {
                     Text("Let's get started")
                         .font(.system(size: 22, weight: .light))
@@ -63,7 +65,7 @@ struct StartPage: View {
 
                 // I already have an account
                 Button(action: {
-                    // Navigate to Login
+                    appState.navigateTo(.login)
                 }) {
                     HStack(spacing: 12) {
                         Text("I already have an account")
@@ -84,7 +86,6 @@ struct StartPage: View {
                 .padding(.bottom, 24)
             }
         }
-        .navigationBarHidden(true)
     }
 }
 

@@ -17,7 +17,8 @@
       "Bash(git remote:*)",
       "Bash(git push:*)",
       "mcp__figma__search_design_system",
-      "WebFetch(domain:www.figma.com)"
+      "WebFetch(domain:www.figma.com)",
+      "Bash(find . -name \"*.swift\" -exec wc -l {})"
     ]
   },
   "enableAllProjectMcpServers": true,
