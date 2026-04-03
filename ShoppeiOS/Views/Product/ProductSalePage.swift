@@ -104,7 +104,7 @@ struct ProductSalePage: View {
         HStack(spacing: 12) {
             // Current Price
             Text(viewModel.product.price)
-                .font(.system(size: 26, weight: .extraBold))
+                .font(.system(size: 26, weight: .bold))
                 .foregroundColor(.black)
 
             // Timer
@@ -113,9 +113,9 @@ struct ProductSalePage: View {
                     .font(.system(size: 16))
                     .foregroundColor(.black.opacity(0.5))
 
-                TimerBox(value: viewModel.hours)
-                TimerBox(value: viewModel.minutes)
-                TimerBox(value: viewModel.seconds)
+                TimerBoxSale(value: viewModel.hours)
+                TimerBoxSale(value: viewModel.minutes)
+                TimerBoxSale(value: viewModel.seconds)
             }
 
             Spacer()
@@ -159,7 +159,7 @@ struct ProductSalePage: View {
             // Header
             HStack {
                 Text("Variations")
-                    .font(.system(size: 20, weight: .extraBold))
+                    .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.black)
 
                 Spacer()
@@ -282,7 +282,7 @@ struct ProductSalePage: View {
 
 // MARK: - Subviews
 
-struct TimerBox: View {
+struct TimerBoxSale: View {
     let value: String
 
     var body: some View {
@@ -292,47 +292,6 @@ struct TimerBox: View {
             .frame(width: 44, height: 32)
             .background(Color(hex: "#FFEBEB"))
             .cornerRadius(7)
-    }
-}
-
-struct VariationPill: View {
-    let title: String
-    let isSelected: Bool
-
-    var body: some View {
-        HStack {
-            Text(title)
-                .font(.system(size: 14, weight: .medium))
-                .foregroundColor(.black)
-        }
-        .frame(width: 60, height: 32)
-        .background(Color(hex: "#F9F9F9"))
-        .cornerRadius(4)
-    }
-}
-
-struct VariationImageCard: View {
-    let color: String
-    let isSelected: Bool
-
-    var body: some View {
-        ZStack(alignment: .topTrailing) {
-            RoundedRectangle(cornerRadius: 5)
-                .fill(Color(hex: color))
-                .frame(width: 100, height: 100)
-
-            if isSelected {
-                Circle()
-                    .fill(Color(hex: "#004CFF"))
-                    .frame(width: 16, height: 16)
-                    .overlay(
-                        Image(systemName: "checkmark")
-                            .font(.system(size: 10, weight: .bold))
-                            .foregroundColor(.white)
-                    )
-                    .offset(x: -4, y: 4)
-            }
-        }
     }
 }
 

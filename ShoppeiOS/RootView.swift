@@ -19,7 +19,7 @@ struct RootView: View {
 // MARK: - App State Manager
 @MainActor
 class AppState: ObservableObject {
-    @Published var navigationPath = NavigationPath<AppDestination>()
+    @Published var navigationPath = NavigationPath()
     @Published var isLoggedIn: Bool = false
     @Published var userEmail: String = ""
 
@@ -28,7 +28,7 @@ class AppState: ObservableObject {
     }
 
     func popToRoot() {
-        navigationPath = NavigationPath<AppDestination>()
+        navigationPath = NavigationPath()
     }
 
     func logout() {

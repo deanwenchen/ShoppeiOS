@@ -192,7 +192,7 @@ struct FlashSaleLivePage: View {
     // MARK: - Bottom Navigation Bar
     private var bottomNavigationBar: some View {
         HStack {
-            NavigationTabItem(
+            NavigationTabIndicator(
                 icon: "house.fill",
                 title: "Home",
                 isSelected: selectedTab == .home,
@@ -201,7 +201,7 @@ struct FlashSaleLivePage: View {
                 selectedTab = .home
             }
 
-            NavigationTabItem(
+            NavigationTabIndicator(
                 icon: "heart",
                 title: "Wishlist",
                 isSelected: selectedTab == .wishlist,
@@ -210,7 +210,7 @@ struct FlashSaleLivePage: View {
                 selectedTab = .wishlist
             }
 
-            NavigationTabItem(
+            NavigationTabIndicator(
                 icon: "list.bullet.rectangle",
                 title: "Categories",
                 isSelected: selectedTab == .categories,
@@ -219,7 +219,7 @@ struct FlashSaleLivePage: View {
                 selectedTab = .categories
             }
 
-            NavigationTabItem(
+            NavigationTabIndicator(
                 icon: "bag.fill",
                 title: "Cart",
                 isSelected: selectedTab == .cart,
@@ -228,7 +228,7 @@ struct FlashSaleLivePage: View {
                 selectedTab = .cart
             }
 
-            NavigationTabItem(
+            NavigationTabIndicator(
                 icon: "person",
                 title: "Profile",
                 isSelected: selectedTab == .profile,
@@ -351,7 +351,7 @@ struct FlashSaleProductCard: View {
     }
 }
 
-struct NavigationTabItem: View {
+struct NavigationTabIndicator: View {
     let icon: String
     let title: String
     let isSelected: Bool

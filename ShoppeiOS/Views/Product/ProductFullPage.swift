@@ -24,7 +24,7 @@ struct ProductFullPage: View {
                     VStack(spacing: 24) {
                         // Price
                         Text(viewModel.product.price)
-                            .font(.system(size: 26, weight: .extraBold))
+                            .font(.system(size: 26, weight: .bold))
                             .foregroundColor(.black)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal, 20)
@@ -126,7 +126,7 @@ struct ProductFullPage: View {
             // Header
             HStack {
                 Text("Variations")
-                    .font(.system(size: 20, weight: .extraBold))
+                    .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.black)
 
                 Spacer()
@@ -171,7 +171,7 @@ struct ProductFullPage: View {
     private var specificationsSection: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Specifications")
-                .font(.system(size: 20, weight: .extraBold))
+                .font(.system(size: 20, weight: .bold))
                 .foregroundColor(.black)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 20)
@@ -241,7 +241,7 @@ struct ProductFullPage: View {
     private var deliverySection: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Delivery")
-                .font(.system(size: 20, weight: .extraBold))
+                .font(.system(size: 20, weight: .bold))
                 .foregroundColor(.black)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 20)
@@ -274,7 +274,7 @@ struct ProductFullPage: View {
         VStack(alignment: .leading, spacing: 16) {
             HStack {
                 Text("Rating & Reviews")
-                    .font(.system(size: 20, weight: .extraBold))
+                    .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.black)
 
                 Spacer()
@@ -378,7 +378,7 @@ struct ProductFullPage: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 12) {
                     ForEach(viewModel.popularProducts.indices, id: \.self) { index in
-                        PopularProductCard(product: viewModel.popularProducts[index])
+                        PopularProductCardFull(product: viewModel.popularProducts[index])
                             .frame(width: 140)
                     }
                 }
@@ -392,7 +392,7 @@ struct ProductFullPage: View {
     private var youMightLikeSection: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("You Might Like")
-                .font(.system(size: 20, weight: .extraBold))
+                .font(.system(size: 20, weight: .bold))
                 .foregroundColor(.black)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 20)
@@ -471,107 +471,7 @@ struct ProductFullPage: View {
     }
 }
 
-// MARK: - Subviews
-
-struct VariationPill: View {
-    let title: String
-    let isSelected: Bool
-
-    var body: some View {
-        HStack {
-            Text(title)
-                .font(.system(size: 14, weight: .medium))
-                .foregroundColor(.black)
-        }
-        .frame(width: 60, height: 32)
-        .background(Color(hex: "#F9F9F9"))
-        .cornerRadius(4)
-    }
-}
-
-struct VariationImageCard: View {
-    let color: String
-    let isSelected: Bool
-
-    var body: some View {
-        ZStack(alignment: .topTrailing) {
-            RoundedRectangle(cornerRadius: 5)
-                .fill(Color(hex: color))
-                .frame(width: 100, height: 100)
-
-            if isSelected {
-                Circle()
-                    .fill(Color(hex: "#004CFF"))
-                    .frame(width: 16, height: 16)
-                    .overlay(
-                        Image(systemName: "checkmark")
-                            .font(.system(size: 10, weight: .bold))
-                            .foregroundColor(.white)
-                    )
-                    .offset(x: -4, y: 4)
-            }
-        }
-    }
-}
-
-struct SpecificationChip: View {
-    let title: String
-    let color: String
-
-    var body: some View {
-        Text(title)
-            .font(.system(size: 14, weight: .medium))
-            .foregroundColor(.black)
-            .frame(height: 25)
-            .padding(.horizontal, 12)
-            .background(Color(hex: color))
-            .cornerRadius(4)
-    }
-}
-
-struct DeliveryOptionRow: View {
-    let title: String
-    let days: String
-    let price: String
-    let isSelected: Bool
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            HStack {
-                Text(title)
-                    .font(.system(size: 16, weight: .medium))
-                    .foregroundColor(.black)
-
-                Spacer()
-
-                Text(days)
-                    .font(.system(size: 13, weight: .medium))
-                    .foregroundColor(Color(hex: "#004CFF"))
-                    .frame(width: 72, height: 26)
-                    .background(Color(hex: "#F5F8FF"))
-                    .cornerRadius(4)
-
-                Spacer()
-
-                Text(price)
-                    .font(.system(size: 16, weight: .bold))
-                    .foregroundColor(.black)
-            }
-            .frame(height: 40)
-            .padding(.horizontal, 16)
-            .background(Color.white)
-            .cornerRadius(10)
-            .overlay(
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(isSelected ? Color(hex: "#004CFF") : Color.gray.opacity(0.3), lineWidth: 1)
-            )
-        }
-        .padding(.horizontal, 20)
-    }
-}
-
-struct PopularProductCard: View {
+struct PopularProductCardFull: View {
     let product: ProductFullModel
 
     var body: some View {

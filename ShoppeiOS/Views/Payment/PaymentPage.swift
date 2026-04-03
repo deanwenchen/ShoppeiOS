@@ -280,7 +280,7 @@ struct PaymentPage: View {
                 // Total Amount
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Total")
-                        .font(.system(size: 20, weight: .extraBold))
+                        .font(.system(size: 20, weight: .bold))
                         .foregroundColor(.black)
 
                     Text(viewModel.totalAmount)

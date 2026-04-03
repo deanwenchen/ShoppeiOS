@@ -27,7 +27,7 @@ struct ProductDetailPage: View {
                     VStack(spacing: 16) {
                         // Price
                         Text(viewModel.product.price)
-                            .font(.system(size: 26, weight: .extraBold))
+                            .font(.system(size: 26, weight: .bold))
                             .foregroundColor(.black)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.horizontal, 20)
@@ -143,7 +143,7 @@ struct ProductDetailPage: View {
             // Header
             HStack {
                 Text("Variations")
-                    .font(.system(size: 20, weight: .extraBold))
+                    .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.black)
 
                 Spacer()
@@ -198,7 +198,7 @@ struct ProductDetailPage: View {
 
             VStack(spacing: 8) {
                 // Standard Shipping
-                ShippingOptionRow(
+                ShippingOptionRowProduct(
                     title: "Standard",
                     duration: "5-7 days",
                     price: "$5.00",
@@ -208,7 +208,7 @@ struct ProductDetailPage: View {
                 }
 
                 // Express Shipping
-                ShippingOptionRow(
+                ShippingOptionRowProduct(
                     title: "Express",
                     duration: "1-2 days",
                     price: "$12.00",
@@ -408,8 +408,8 @@ struct ProductDetailPage: View {
     }
 }
 
-// MARK: - Shipping Option Row
-struct ShippingOptionRow: View {
+// MARK: - Shipping Option Row (Product Detail Version)
+struct ShippingOptionRowProduct: View {
     let title: String
     let duration: String
     let price: String
@@ -464,49 +464,6 @@ struct ShippingOptionRow: View {
                 RoundedRectangle(cornerRadius: 10)
                     .fill(isSelected ? Color(hex: "#E5EBFC") : Color(hex: "#F9F9F9"))
             )
-        }
-    }
-}
-
-// MARK: - Rating Bar
-struct RatingBar: View {
-    let stars: Int
-    let count: Int
-    let totalCount: Int
-
-    var body: some View {
-        HStack(spacing: 8) {
-            Text("\(stars)")
-                .font(.system(size: 12, weight: .medium))
-                .foregroundColor(.black)
-                .frame(width: 12)
-
-            HStack(spacing: 2) {
-                ForEach(0..<5, id: \.self) { index in
-                    Image(systemName: index < stars ? "star.fill" : "star")
-                        .font(.system(size: 8))
-                        .foregroundColor(Color(hex: "#FFB800"))
-                }
-            }
-            .frame(width: 60)
-
-            GeometryReader { geo in
-                ZStack(alignment: .leading) {
-                    RoundedRectangle(cornerRadius: 2)
-                        .fill(Color(hex: "#E5EBFC"))
-                        .frame(height: 6)
-
-                    RoundedRectangle(cornerRadius: 2)
-                        .fill(Color(hex: "#004CFF"))
-                        .frame(width: geo.size.width * CGFloat(count) / max(totalCount, 1), height: 6)
-                }
-            }
-            .frame(height: 6)
-
-            Text("\(count)")
-                .font(.system(size: 12, weight: .regular))
-                .foregroundColor(.gray)
-                .frame(width: 30)
         }
     }
 }
@@ -721,40 +678,5 @@ struct ReviewsSheet: View {
 struct ProductDetailPage_Previews: PreviewProvider {
     static var previews: some View {
         ProductDetailPage()
-    }
-}
-
-// MARK: - Variation Image Card
-struct VariationImageCard: View {
-    let color: String
-    let imageColor: String
-    let isSelected: Bool
-
-    var body: some View {
-        ZStack(alignment: .topTrailing) {
-            // Product Image from Figma
-            AsyncImage(url: URL(string: ImageURLProvider.getVariationImageURL(for: imageColor))) { image in
-                image.resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 100, height: 100)
-            } placeholder: {
-                RoundedRectangle(cornerRadius: 5)
-                    .fill(Color(hex: imageColor))
-                    .frame(width: 100, height: 100)
-            }
-
-            // Selection Indicator
-            if isSelected {
-                Circle()
-                    .fill(Color(hex: "#004CFF"))
-                    .frame(width: 16, height: 16)
-                    .overlay(
-                        Image(systemName: "checkmark")
-                            .font(.system(size: 10, weight: .bold))
-                            .foregroundColor(.white)
-                    )
-                    .offset(x: -4, y: 4)
-            }
-        }
     }
 }

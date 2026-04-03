@@ -21,8 +21,7 @@ class AddVoucherViewModel: ObservableObject {
     ]
 
     func applyVoucher(voucher: Voucher) {
-        // Handle voucher application
-        print("Applied voucher: \(voucher.title)")
+        // Handle voucher application - TODO: Implement backend integration
     }
 }
 

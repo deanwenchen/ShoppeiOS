@@ -142,7 +142,7 @@ struct EmptyCartFromWishlistView: View {
                 .foregroundColor(.black)
 
             ForEach(viewModel.wishlistItems) { item in
-                WishlistItemRow(
+                WishlistItemRowEmpty(
                     item: item,
                     onAddToCart: {
                         viewModel.moveToCart(itemId: item.id)
@@ -165,7 +165,7 @@ struct EmptyCartFromWishlistView: View {
                 // Total Amount
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Total")
-                        .font(.system(size: 20, weight: .extraBold))
+                        .font(.system(size: 20, weight: .bold))
                         .foregroundColor(.black)
 
                     Text("$0,00")
@@ -196,8 +196,8 @@ struct EmptyCartFromWishlistView: View {
     }
 }
 
-// MARK: - Wishlist Item Row
-struct WishlistItemRow: View {
+// MARK: - Wishlist Item Row (Empty Cart Version)
+struct WishlistItemRowEmpty: View {
     let item: CartItem
     let onAddToCart: () -> Void
     let onDelete: () -> Void

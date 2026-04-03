@@ -86,7 +86,7 @@ struct ProductVariationsPage: View {
                         // Price and Info
                         VStack(spacing: 8) {
                             Text(viewModel.product.price)
-                                .font(.system(size: 26, weight: .extraBold))
+                                .font(.system(size: 26, weight: .bold))
                                 .foregroundColor(.black)
                                 .frame(maxWidth: .infinity, alignment: .leading)
 
